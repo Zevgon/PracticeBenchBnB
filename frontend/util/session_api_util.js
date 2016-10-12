@@ -1,38 +1,28 @@
-export const signUp = (username, password, success, error) => {
+export const signUp = (user, success, error) => {
   $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: {
-      user: {
-        username,
-        password
-      }
-    },
+    data: user,
     success,
     error
   });
 };
 
-export const signIn = (username, password, success, error) => {
+export const logIn = (user, success, error) => {
   $.ajax({
     method: 'POST',
-    url: '/api/sessions',
-    data: {
-      user: {
-        username,
-        password
-      }
-    },
+    url: '/api/session',
+    data: user,
     success,
     error
   });
 };
 
-export const signOut = (success, error) => {
+export const logOut = success => {
   $.ajax({
     method: 'DELETE',
-    url: '/api/sessions',
+    url: '/api/session',
     success,
-    error
+    error: () => {console.log('Error in logout?!?!?!?!?!')}
   });
 };
