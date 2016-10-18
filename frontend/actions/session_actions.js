@@ -14,6 +14,11 @@ export const logOut = () => ({
   type: LOG_OUT
 });
 
+export const signUp = user => ({
+  type: SIGN_UP,
+  user
+});
+
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser

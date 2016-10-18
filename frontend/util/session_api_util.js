@@ -2,7 +2,7 @@ export const signUp = (user, success, error) => {
   $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: user,
+    data: {user},
     success,
     error
   });
